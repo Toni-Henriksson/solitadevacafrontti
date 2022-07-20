@@ -20,7 +20,7 @@ const Stations = () => {
 
   const fetchNextPage = async (next) => {
     setLoading(true);
-    axios.get("http://localhost:3001/getStations", { params: { next } }).then((response) => {
+    axios.get("https://solitadevaus.herokuapp.com/getStations", { params: { next } }).then((response) => {
       setListOfStations(response.data)
       setLoading(false);
     })
@@ -34,7 +34,7 @@ const Stations = () => {
     }
   }
   const handleSearch = async (stationName) => {
-    axios.get("http://localhost:3001/getStationByName", { params: { stationName } }).then((response) => {
+    axios.get("https://solitadevaus.herokuapp.com/getStationByName", { params: { stationName } }).then((response) => {
       calculateStationJourneys(response.data[0].ID)
       setSearchStation(response.data);
       setToggleSearch(true);
@@ -42,7 +42,7 @@ const Stations = () => {
   }
 
   const calculateStationJourneys = (stationid) => {
-    axios.get("http://localhost:3001/getStationJourneys", { params: { stationid } }).then((response) => {
+    axios.get("https://solitadevaus.herokuapp.com/getStationJourneys", { params: { stationid } }).then((response) => {
       setStationJourneyData(response.data)
     })
   }
