@@ -45,6 +45,7 @@ function App() {
             <Stations></Stations>
         }
       </div>
+      
       <div className="navigation-container">
         <div className="controls-wrapper">
           <button className="button-main" style={{ width: "8vw" }} onClick={() => { setToggleNavigation(true) }}>Journeys</button>

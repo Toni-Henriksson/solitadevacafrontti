@@ -9,6 +9,8 @@ const DropDownPage = () => {
     const [stationOwner, setStationOwner] = useState('');
     const [stationCapacity, setStationCapacity] = useState('');
 
+    const [message, setMessage] = useState('');
+
     const createStation = () => {
         axios.post("https://solitadevaus.herokuapp.com/createStation", {
             Name: stationName,
@@ -17,7 +19,7 @@ const DropDownPage = () => {
             Owner: stationOwner,
             Capacity: stationCapacity,
         }).then((response) => {
-            console.log("Station added!")
+            setMessage('Station added!')
         });
     };
 
@@ -30,6 +32,7 @@ const DropDownPage = () => {
             <input placeholder='Station owner' className='dropdownpage-searchbar' onChange={(e) => { setStationOwner(e.target.value) }}></input>
             <input placeholder='Station capacity' className='dropdownpage-searchbar' onChange={(e) => { setStationCapacity(e.target.value) }}></input>
             <button className='button-main' onClick={createStation}>Submit</button>
+            <p style={{color: 'red', alignSelf: 'center'}}>{message}</p>
         </div>
     )
 }

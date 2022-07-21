@@ -66,8 +66,8 @@ const Stations = () => {
           toggleSearch ?
             <div>
                 <div className="single-station-card">
-                  <p>Name: {searchStation[0]?.Nimi}</p>
-                  <p>Address: {searchStation[0]?.Osoite}</p>
+                  <p>Name: {searchStation[0]?.Name}</p>
+                  <p>Address: {searchStation[0]?.Adress}</p>
                   <p>City: {searchStation[0]?.Kaupunki}</p>
                   <p>Owner: {searchStation[0]?.Operaattor}</p>
                   <p>Capasity: {searchStation[0]?.Kapasiteet}</p>
