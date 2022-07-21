@@ -26,8 +26,8 @@ function App() {
       </div>
       <div className="navigation-container">
         <div className="controls-wrapper">
-          <button className="button-main" style={{width: "8vw", fontSize: "20px"}} onClick={()=> {setToggleNavigation(true)}}>Journeys</button>
-          <button className="button-main" style={{width: "8vw", fontSize: "20px"}} onClick={()=> {setToggleNavigation(false)}}>Stations</button>
+          <button className="button-main" style={{width: "8vw"}} onClick={()=> {setToggleNavigation(true)}}>Journeys</button>
+          <button className="button-main" style={{width: "8vw"}} onClick={()=> {setToggleNavigation(false)}}>Stations</button>
         </div>
       </div>
     </div>

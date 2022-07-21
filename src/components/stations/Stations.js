@@ -33,6 +33,7 @@ const Stations = () => {
       fetchNextPage(i)
     }
   }
+
   const handleSearch = async (stationName) => {
     axios.get("https://solitadevaus.herokuapp.com/getStationByName", { params: { stationName } }).then((response) => {
       calculateStationJourneys(response.data[0].ID)
@@ -55,7 +56,7 @@ const Stations = () => {
   }
 
   return (
-    <div>
+    <div className='container'>
       <div className='stations-controls'>
         <input placeholder='Search station by name..' className='searchbar' onChange={(e) => { setSearchedStation(e.target.value) }}></input>
         <button className='button-main' onClick={() => handleSearch(searchedStation)}>search</button>
@@ -87,7 +88,7 @@ const Stations = () => {
                     <p>STATION</p>
                     <p>Station name: {station.Nimi}</p>
                     <p>Stations address: {station.Osoite}</p>
-                    <p style={{color: 'green', fontSize: '20px'}}>Click me to see more!</p>
+                    <p style={{color: 'green'}}>Click me to see more!</p>
                   </div>
                 </div>
               );
