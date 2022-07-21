@@ -29,10 +29,9 @@ function App() {
         <div className="header-section">
           <div className="header-section-nav">
             <button className="button-main" onClick={() => { setToggleDropDown('0') }}>Add station</button>
-            <button className="button-main" onClick={() => { setToggleDropDown('0') }}>Add journey</button>
             <div className="dropdown-page" style={{ right: toggleDropDown }}>
               <DropDownPage></DropDownPage>
-              <button className="button-main" onClick={() => { setToggleDropDown('-25vw') }}>close</button>
+              <button className="button-main" style={{width: '19vw', backgroundColor: 'cyan'}} onClick={() => { setToggleDropDown('-25vw') }}>close</button>
             </div>
           </div>
         </div>
