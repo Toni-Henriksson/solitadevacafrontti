@@ -1,14 +1,20 @@
 .station-item {
   display: flex;
-  flex-direction: row;
-  width: 300px;
-  height: 300px;
+  justify-content: center;
+  align-items: center;
+  width: 12.625vw;
+  height: 12.625vw;
   margin: 5px;
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 .station-item:hover {
   cursor: pointer;
   opacity: 0.7;
   pointer-events: painted;
+
 }
 
 .stations-list-wrapper {
@@ -17,7 +23,7 @@
   align-content: flex-start;
   justify-content: center;
   width: 50vw;
-  height: 70vh;
+  height: 30vw;
   border-radius: 10px;
   overflow: hidden;
   background-color: #e6e6e6;
@@ -30,8 +36,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 300px;
-  height: 300px;
 }
 
 .stations-controls {
