@@ -9,13 +9,28 @@ function App() {
   return (
     <div className="App">
       <div className="header">
-      {
+        <div className="header-section">
+          <p>Helsinki City Bike app</p>
+          <p>by Toni Henriksson</p>
+        </div>
+        {
           toggleNavigation ? 
-          <h1>EXPLORE JOURNEYS</h1>
+          <div>
+            <h1>EXPLORE JOURNEYS</h1>
+          </div>
           :
-          <h1>BROWSE STATIONS</h1>
+          <div>
+            <h1>BROWSE STATIONS</h1>
+          </div>
         }
+        <div className="header-section">
+          <div className="header-section-nav">
+            <button className="button-main">Top 5 stations</button>
+            <button className="button-main">Top 5 stations</button>
+          </div>
+        </div>
       </div>
+
       <div className="content-container">
         {
           toggleNavigation ? 

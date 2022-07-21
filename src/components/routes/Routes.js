@@ -13,7 +13,7 @@ const Routes = () => {
   const [toggleSearch, setToggleSearch] = useState(false);
   const [searchedJourney, setSearchedJourney] = useState('');
   const [journeyData, setJourneyData] = useState([]);
-  const singleJourneyCalculations = [];
+  const [singleJourneyCalculations, setSingleJourneyCalculations] = useState([]);
 
   useEffect(() => {
     fetchNextPage(next);
@@ -43,8 +43,8 @@ const Routes = () => {
 
   const calculateStationJourneys = (stationid) => {
     axios.get("https://solitadevaus.herokuapp.com/getStationJourneys", { params: { stationid } }).then((response) => {
-      singleJourneyCalculations.push(response.data)
-      console.log(singleJourneyCalculations)
+      setSingleJourneyCalculations(response.data)
+      setToggleSearch(true)
     })
   }
 
@@ -61,17 +61,22 @@ const Routes = () => {
       <div className="routes-list-wrapper">
         {
           toggleSearch ?
-            <div>
-              <div>
-                <p>Journey details</p>
+          <div className='route-search-container'>
+            <div className='single-station-card'>
+              <div className='station-title'>
+                <p>{journeyData[0].Name}</p>
               </div>
-              <div>
-                <p>Start: {}</p>
-                <p>End: {}</p>
-                <p>Distance: {}</p>
-                <p>Duration: {}</p>
+
+              <div className='station-content'>
+                <p>Departures from here: {singleJourneyCalculations[0].departures}</p>
+                <p>Returns to this location: {singleJourneyCalculations[0].returns}</p>
+              </div>
+              
+              <div className="single-station-controls">
+                <button className='button-main' onClick={() => setToggleSearch(false)}>Close</button>
               </div>
             </div>
+          </div>
             :
             listOfRoutes.map((route, id) => {
               return (

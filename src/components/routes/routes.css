@@ -2,7 +2,6 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  align-content: flex-start;
   width: 50vw;
   height: 70vh;
   border-radius: 10px;
@@ -10,6 +9,12 @@
   background-color: #e6e6e6;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+.route-search-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .route-card {
   width:100%;
@@ -31,4 +36,11 @@
 
 .route-item-section {
   width: 20%;
+}
+
+.station-title{
+  align-self: center;
+}
+.station-content{
+  align-self: center;
 }
