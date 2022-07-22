@@ -1,8 +1,6 @@
 import { React, useState, useEffect } from 'react';
 import "./stations.css";
 import axios from "axios";
-import postitImageDark from '../routes/images/card_dark.png';
-import { HandleSearch } from '../../utils/reusablefunctions/HandleSearch';
 
 const Stations = () => {
   const [listOfStations, setListOfStations] = useState([]);
@@ -47,6 +45,7 @@ const Stations = () => {
       setStationJourneyData(response.data)
     })
   }
+
   if (loading) {
     return (
       <div style={{ alignself: 'center' }}>

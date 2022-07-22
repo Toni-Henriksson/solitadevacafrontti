@@ -3,7 +3,7 @@
   flex-flow: row wrap;
   justify-content: space-between;
   width: 50vw;
-  height: 70vh;
+  height: 30vw;
   border-radius: 10px;
   overflow: hidden;
   background-color: #e6e6e6;
@@ -30,7 +30,7 @@
 .pagination-section {
   display: flex;
   justify-content: center;
-  height: 10vh;
+  height: 3vw;
   width: 100%;
 }
 

@@ -20,17 +20,26 @@ const DropDownPage = () => {
             Capacity: stationCapacity,
         }).then((response) => {
             setMessage('Station added!')
+            clearForm();
         });
+
     };
+    const clearForm = () => {
+        setStationName('');
+        setStationaAdress('');
+        setStationCity('');
+        setStationOwner('');
+        setStationCapacity('');
+    }
 
     return(
         <div className="dropdown-container">
             <p style={{alignSelf: 'center'}}>New station</p>
-            <input placeholder='Station name' className='dropdownpage-searchbar' onChange={(e) => { setStationName(e.target.value) }}></input>
-            <input placeholder='Station address' className='dropdownpage-searchbar' onChange={(e) => { setStationaAdress(e.target.value) }}></input>
-            <input placeholder='Station city' className='dropdownpage-searchbar' onChange={(e) => { setStationCity(e.target.value) }}></input>
-            <input placeholder='Station owner' className='dropdownpage-searchbar' onChange={(e) => { setStationOwner(e.target.value) }}></input>
-            <input placeholder='Station capacity' className='dropdownpage-searchbar' onChange={(e) => { setStationCapacity(e.target.value) }}></input>
+            <input placeholder='Station name' className='dropdownpage-searchbar' value={stationName} onChange={(e) => { setStationName(e.target.value) }}></input>
+            <input placeholder='Station address' className='dropdownpage-searchbar' value={stationAddress} onChange={(e) => { setStationaAdress(e.target.value) }}></input>
+            <input placeholder='Station city' className='dropdownpage-searchbar' value={stationCity} onChange={(e) => { setStationCity(e.target.value) }}></input>
+            <input placeholder='Station owner' className='dropdownpage-searchbar' value={stationOwner} onChange={(e) => { setStationOwner(e.target.value) }}></input>
+            <input placeholder='Station capacity' className='dropdownpage-searchbar' value={stationCapacity} onChange={(e) => { setStationCapacity(e.target.value) }}></input>
             <button className='button-main' onClick={createStation}>Submit</button>
             <p style={{color: 'red', alignSelf: 'center'}}>{message}</p>
         </div>
